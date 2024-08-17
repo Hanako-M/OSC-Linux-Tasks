@@ -23,5 +23,3 @@ git add solution.txt
 git commit -m "upload"
 git push origin main
 
-git push origin main
-
