@@ -1,0 +1,63 @@
+mkdir project_files
+cd project_files/
+mkdir reports
+mkdir logs
+mkdir data
+cd reports/
+touch report1.md
+touch report2.md
+cd /home/osc/project_files/logs/
+touch system.log error.log
+touch file1.pdf file2.pdf
+cd /home/osc/project_files/data/
+touch data.csv info.txt
+nano data.csv
+nano /home/osc/project_files/reports/report1.md
+nano /home/osc/project_files/logs/system.log
+cd /home/osc/project_files/logs/
+tar -cvf logs_backup.tar system.log error.log file1.pdf file2.pdf
+mv logs_backup.tar /home/osc/project_files/
+cd /home/osc/project_files/
+mv logs_backup.tar /home/osc/project_files/logs/
+cd logs/
+tar -xvf logs_backup.tar
+find ~ -name "*.md"
+cd ~
+cd project_files/
+find . -name "*.log"
+find . -name file1.pdf
+find . -iname "*.pdf"
+cd logs/
+find . -type f
+cd /home/osc/project_files/data/
+ln -s data.csv /home/osc/project_files/link_data.csv
+cd ..
+nano link_data.csv
+cd /home/osc/project_files/data/
+nano link_data.csv
+unlink link_data.csv
+touch summary.txt
+echo "summary start" >> summary.txt
+echo "5:30PM 8/20/2024" >> summary.txt
+wc -l < summary.txt | tee -a summary.txt
+2
+cd reports/
+wc -w report1.md
+2 report1.md
+cd /home/osc/project_files/logs/
+wc -c < system.log | tee -a /home/osc/project_files/summary.txt
+7
+cd ..
+cat summary.txt
+summary start
+5:30PM 8/20/2024
+2
+7
+ls | wc -w | tee -a /home/osc/project_files/summary.txt 
+5
+cat summary.txt
+summary start
+5:30PM 8/20/2024
+2
+7
+5
